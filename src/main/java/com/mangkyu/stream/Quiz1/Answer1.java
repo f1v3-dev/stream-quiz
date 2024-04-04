@@ -3,6 +3,7 @@ package com.mangkyu.stream.Quiz1;
 import com.opencsv.CSVReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -50,7 +51,7 @@ public class Answer1 {
     }
 
     private List<String[]> readCsvLines() throws IOException {
-        CSVReader csvReader = new CSVReader(new FileReader(getClass().getResource("/user.csv").getFile()));
+        CSVReader csvReader = new CSVReader(new FileReader(getClass().getResource("/user.csv").getFile(), StandardCharsets.UTF_8));
         csvReader.readNext();
         return csvReader.readAll();
     }
