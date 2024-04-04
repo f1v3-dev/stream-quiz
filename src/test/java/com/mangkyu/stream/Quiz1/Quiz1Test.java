@@ -1,5 +1,7 @@
 package com.mangkyu.stream.Quiz1;
 
+import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.time.StopWatch;
 import org.junit.jupiter.api.Test;
 import java.io.IOException;
 
@@ -13,6 +15,26 @@ class Quiz1Test {
     @Test
     void quiz1() throws IOException {
         assertThat(quiz.quiz1()).isEqualTo(answer.quiz1());
+    }
+
+    @Test
+    void quiz1_my_version() throws IOException {
+        StopWatch stopWatch = new StopWatch();
+        stopWatch.start();
+        quiz.quiz1();
+        stopWatch.stop();
+
+        System.out.println(stopWatch.getNanoTime());
+    }
+
+    @Test
+    void quiz1_answer_version() throws IOException {
+        StopWatch stopWatch = new StopWatch();
+        stopWatch.start();
+        answer.quiz1();
+        stopWatch.stop();
+
+        System.out.println(stopWatch.getNanoTime());
     }
 
     @Test
